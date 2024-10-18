@@ -9,7 +9,7 @@
     <style>
         body, html {
             text-align: center;
-            padding: 50px;
+            padding: 30px;
         }
         .container {
             font-family: Cambria;
@@ -31,6 +31,7 @@
         <br>
         <br>
         <h4><strong>PRÁCTICA DE REPASO 1</strong></h4>
+        <a href="/repaso1" class="btn btn-primary">REPASO 1</a>
         <br>
         <h5>Programación Web</h5>
         <br>
