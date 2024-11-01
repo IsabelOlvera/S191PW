@@ -5,6 +5,9 @@
 @section('content')
 <style>
     /* Estilos vintage para el formulario */
+    body {
+        font-family: 'Times New Roman', serif;
+    }
     .form-container {
         border-radius: 10px;
         background-color: #fff8e1;
