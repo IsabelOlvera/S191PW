@@ -16,7 +16,7 @@ class registroController extends Controller
     {
         // Redirecciona con mensaje de éxito en la sesión
         $titulo = $request->input('titulo');
-        session()->flash('exito', "Todo correcto ". $titulo. " guardado.");
+        session()->flash('exito', "Todo correcto: Libro ". $titulo. " guardado.");
         return to_route('rutaregistro');
     }
 }
