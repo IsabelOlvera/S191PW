@@ -55,7 +55,7 @@
 </style>
 
 <div class="form-container">
-    <h2>Registro de Libro</h2>
+    <h2>{{__('Registro de Libro')}}</h2>
     @if(session('exito'))
         <script>
             Swal.fire({
@@ -71,42 +71,42 @@
             <form method="POST" action="{{ route('registronew') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="isbn" class="form-label">ISBN:</label>
+                    <label for="isbn" class="form-label">{{__('ISBN:')}}</label>
                     <input type="text" class="form-control" name="isbn" value="{{ old('isbn') }}">
                     <small class="text-danger">{{ $errors->first('isbn') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="titulo" class="form-label">Título:</label>
+                    <label for="titulo" class="form-label">{{__('Título:')}}</label>
                     <input type="text" class="form-control" name="titulo" value="{{ old('titulo') }}">
                     <small class="text-danger">{{ $errors->first('titulo') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="autor" class="form-label">Autor:</label>
+                    <label for="autor" class="form-label">{{__('Autor:')}}</label>
                     <input type="text" class="form-control" name="autor" value="{{ old('autor') }}">
                     <small class="text-danger">{{ $errors->first('autor') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="paginas" class="form-label">Páginas:</label>
+                    <label for="paginas" class="form-label">{{__('Páginas:')}}</label>
                     <input type="number" class="form-control" name="paginas" value="{{ old('paginas') }}">
                     <small class="text-danger">{{ $errors->first('paginas') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="anio" class="form-label">Año:</label>
+                    <label for="anio" class="form-label">{{__('Año:')}}</label>
                     <input type="number" class="form-control" name="anio" value="{{ old('anio') }}">
                     <small class="text-danger">{{ $errors->first('anio') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="editorial" class="form-label">Editorial:</label>
+                    <label for="editorial" class="form-label">{{__('Editorial:')}}</label>
                     <input type="text" class="form-control" name="editorial" value="{{ old('editorial') }}">
                     <small class="text-danger">{{ $errors->first('editorial') }}</small>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email de Editorial:</label>
+                    <label for="email" class="form-label">{{__('Email de Editorial:')}}</label>
                     <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                     <small class="text-danger">{{ $errors->first('email') }}</small>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-vintage">Registrar Libro</button>
+                    <button type="submit" class="btn btn-vintage">{{__('Registrar Libro')}}</button>
                 </div>
             </form>
         </div>

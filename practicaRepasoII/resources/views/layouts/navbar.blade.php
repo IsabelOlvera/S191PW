@@ -61,17 +61,17 @@
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">La Biblioteca de la Media Noche</a>
+        <a class="navbar-brand" href="#">{{__('La Biblioteca de la Media Noche')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('rutaprincipal')}}">Principal</a>
+                    <a class="nav-link" href="{{route('rutaprincipal')}}">{{__('Principal')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('rutaregistro')}}">Registro de Libro</a>
+                    <a class="nav-link" href="{{route('rutaregistro')}}">{{__('Registro de Libro')}}</a>
                 </li>
             </ul>
         </div>
@@ -84,7 +84,9 @@
 
     <!-- Pie de página -->
     <footer>
-        <p>La Biblioteca de la Media Noche &copy; {{ date('Y') }}</p>
+        <p>{{ date('d-m-y') }}</p>
+        <p>&copy; {{ date('Y') }} {{__('La Biblioteca de la Media Noche. Todos los derechos reservados.')}}</p>
+
     </footer>
 </body>
 </html>
