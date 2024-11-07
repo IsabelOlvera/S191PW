@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\formularioRequest;
 
-class RegistroController extends Controller
+class formularioController extends Controller
 {
     public function create()
     {
@@ -14,7 +14,9 @@ class RegistroController extends Controller
 
     public function store(formularioRequest $request)
     {
-        return redirect()->route('/');
+        $usuario=$request->input('correo');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+        return to_route('inicio');
     }
 }
 
