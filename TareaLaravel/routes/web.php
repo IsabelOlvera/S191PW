@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Route;
 //Route::post('/enviarCliente',[controladorVistas::class,'procesaCliente' ])->name('rutaenvia');
 
 //Rutas de cliente controller
-Route::get('/',[clienteController::class,'home'])->name('rutainicio');
-Route::get('/cliente/create',[clienteController::class,'create' ])->name('rutaformulario');
-Route::post('/cliente',[clienteController::class,'store' ])->name('rutaenvia');
-
-Route::get('/cliente',[clienteController::class,'index' ])->name('consultaclientes');
-
+Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
+Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaformulario');
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaenvia');
+Route::get('/cliente', [clienteController::class, 'index'])->name('consultaclientes');
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaedit');
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('rutaupdate');
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('rutaeliminar');
 
 
 /*Route::get('/', function () {

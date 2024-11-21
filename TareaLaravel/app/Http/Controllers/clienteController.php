@@ -61,15 +61,30 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = DB::table('cliente')->where('id', $id)->first();
+
+        if (!$cliente) {
+            return redirect()->route('consultaclientes')->withErrors(['Cliente no encontrado.']);
+        }
+
+        return view('formulario', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, string $id)
     {
-        //
+        DB::table('cliente')->where('id', $id)->update([
+            'nombre' => $request->input('txtnombre'),
+            'apellido' => $request->input('txtapellido'),
+            'email' => $request->input('txtcorreo'),
+            'telefono' => $request->input('txttelefono'),
+            'updated_at' => now(),
+        ]);
+
+        session()->flash('actualizacion', 'El cliente fue actualizado correctamente.');
+        return redirect()->route('consultaclientes');
     }
 
     /**
