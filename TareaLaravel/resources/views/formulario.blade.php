@@ -37,29 +37,25 @@
 
                 <div class="mb-3">
                     <label for="nombre" class="form-label">{{ __('Nombre: ') }}</label>
-                    <input type="text" class="form-control" name="txtnombre" 
-                           value="{{ old('txtnombre', $cliente->nombre ?? '') }}">
+                    <input type="text" class="form-control" name="txtnombre" value="{{ old('txtnombre', $cliente->nombre ?? '') }}">
                     <small>{{ $errors->first('txtnombre') }}</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="apellido" class="form-label">{{ __('Apellido: ') }}</label>
-                    <input type="text" class="form-control" name="txtapellido" 
-                           value="{{ old('txtapellido', $cliente->apellido ?? '') }}">
+                    <input type="text" class="form-control" name="txtapellido" value="{{ old('txtapellido', $cliente->apellido ?? '') }}">
                     <small>{{ $errors->first('txtapellido') }}</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="correo" class="form-label">{{ __('Correo: ') }}</label>
-                    <input type="email" class="form-control" name="txtcorreo" 
-                           value="{{ old('txtcorreo', $cliente->email ?? '') }}">
+                    <input type="email" class="form-control" name="txtcorreo" value="{{ old('txtcorreo', $cliente->email ?? '') }}">
                     <small>{{ $errors->first('txtcorreo') }}</small>
                 </div>
 
                 <div class="mb-3">
                     <label for="telefono" class="form-label">{{ __('Teléfono: ') }}</label>
-                    <input type="text" class="form-control" name="txttelefono" 
-                           value="{{ old('txttelefono', $cliente->telefono ?? '') }}">
+                    <input type="text" class="form-control" name="txttelefono" value="{{ old('txttelefono', $cliente->telefono ?? '') }}">
                     <small>{{ $errors->first('txttelefono') }}</small>
                 </div>
 

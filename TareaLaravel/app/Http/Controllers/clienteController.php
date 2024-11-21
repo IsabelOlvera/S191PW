@@ -92,6 +92,9 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('cliente')->where('id', $id)->delete();
+        
+        session()->flash('eliminado', 'El cliente fue eliminado correctamente.');
+        return redirect()->route('consultaclientes');
     }
 }

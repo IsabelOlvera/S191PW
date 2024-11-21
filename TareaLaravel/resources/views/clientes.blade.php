@@ -13,6 +13,17 @@
     </script>
     @endif
 
+    @if (session('eliminado'))
+    <script>
+        Swal.fire({
+            title: '¡Eliminación Exitosa!',
+            text: "{{ session('eliminado') }}",
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+    </script>
+    @endif
+
     {{-- Inicia tarjetaCliente --}}
     <div class="container mt-5 col-md-8">
         @foreach ($consultaClientes as $cliente)
@@ -34,5 +45,37 @@
         @endforeach
     </div> {{-- divcontainer --}}
     {{-- Finaliza tarjetaCliente --}}
+
+    <script>
+        document.querySelectorAll('.eliminar-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+    
+                Swal.fire({
+                    title: '¿Estás seguro de que deseas eliminar a este usuario?',
+                    text: "Esta acción no se puede deshacer",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sí, eliminar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Enviar el formulario de eliminación
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = `/cliente/${id}`;
+                        form.innerHTML = `
+                            @csrf
+                            @method('DELETE')
+                        `;
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
     @endsection
 
